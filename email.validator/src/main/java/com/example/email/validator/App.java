@@ -35,7 +35,7 @@ public class App
 
 public static boolean validation(String email){
 	if(!email.contains("@")){
-		System.out.println("There is no @ symbole in that email address.");
+		System.out.println("There is no @ symbole in that email address .");
 		return false;
 	}
 	if(!email.contains(".")){
