@@ -24,10 +24,7 @@ public class App
     	else{
     		System.out.println("This is not a valid address.");
     	}
- 
-    	if(!volidationLength(email1)){
-    		
-    	}
+
     
     }
 
@@ -50,30 +47,7 @@ public static boolean validation(String email){
 	
 }
 
-public static boolean volidationLength(String email){
-	if(email.length()<8)
-	{
-		System.out.println("The length of the eamail has to be more than 8.");
-		return false;
-	}
-	return true;
-}
 
-public static class IpFromUrl {
-	  // Returns the IP address of an URL
-	  // i.e. http://www.facebook.com -> 123.456.789.10
-	  public static String getIp( String hostname ) throws IOException {
-	    try {
-	      InetAddress ipaddress = InetAddress.getByName(hostname);
-	      System.out.println("IP address: " + ipaddress.getHostAddress());
-	      return ipaddress.getHostAddress();
-	    }
-	    catch ( UnknownHostException e ){
-	      System.out.println("Could not find IP address for: " + hostname);
-	      throw new IOException("Could not find IP address for: " + hostname);
-	    }
-	  }
-	}
 }
 
 
