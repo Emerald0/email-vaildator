@@ -9,22 +9,21 @@ import java.io.*;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args)
     {
-    	String emailAdd="";
+    	String emailAddr="";
     	
     	System.out.println("Enter you Email address: ");
     	Scanner email = new Scanner(System.in);
-    	String email1=email.nextLine();
+    	emailAddr=email.nextLine();
     	
-    	if(validation(email1)){
-    		System.out.println("Your email is "+email1);
-    	}
-    	
-    	else{
-    		System.out.println("This is not a valid address.");
+    	if(validation(emailAddr)&&volidationLength(emailAddr)){
+    		System.out.println("Your email is "+emailAddr);
     	}
 
+    	
+    	System.out.println(volidationLength(emailAddr));
+    
     
     }
 
@@ -47,6 +46,31 @@ public static boolean validation(String email){
 	
 }
 
+public static boolean volidationLength(String email){
+	if(email.length()<8)
+	{
+		System.out.println("The length of the eamail has to be more than 8.");
+		return false;
+	}
+	return true;
+}
+
+
+public static class checkDomain {
+	  // Returns the IP address of an URL
+	  // i.e. http://www.facebook.com -> 123.456.789.10
+	  public static String getIp( String hostname ) throws IOException {
+	    try {
+	      InetAddress ipaddress = InetAddress.getByName(hostname);
+	      System.out.println("IP address: " + ipaddress.getHostAddress());
+	      return ipaddress.getHostAddress();
+	    }
+	    catch ( UnknownHostException e ){
+	      System.out.println("Could not find IP address for: " + hostname);
+	      throw new IOException("Could not find IP address for: " + hostname);
+	    }
+	  }
+	}
 
 }
 
